@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
+
+.Header {
+    width: 99vw;
+    top: 4vh;
+    height: 13vh;
+    position: absolute;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(100px, 200px));
+    grid-column-gap: 2vw;
+    align-items: center;
+
+    img {
+        height: 15vmin;
+        background-size: cover;
+        justify-self: self-start;
+        padding-left: 10vw;
+    }
+    .button {
+        text-align: center;
+        font-size: 4.5vmin;
+        font-weight: 900;
+        font-family: "Amatic SC", cursive;
+        color: black;
+
+        padding-bottom: 1rem;
+        &:hover {
+            border-bottom: 1px solid orange;
+        }
+        &:active {
+            border-bottom: 1px solid whitesmoke;
+        }
+    }
+}
