@@ -20,17 +20,22 @@
     }
     .button {
         text-align: center;
-        font-size: 4.5vmin;
+        font-size: 3.5vmin;
         font-weight: 900;
         font-family: "Amatic SC", cursive;
         color: black;
 
         padding-bottom: 1rem;
         &:hover {
-            border-bottom: 1px solid orange;
+            border-bottom: 2px solid orange;
         }
         &:active {
-            border-bottom: 1px solid whitesmoke;
+            border-bottom: 3px solid whitesmoke;
+        }
+        .link {
+            text-decoration: none;
+
+            color: black;
         }
     }
 }
