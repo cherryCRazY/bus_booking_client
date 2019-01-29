@@ -1,0 +1,48 @@
+.bus {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 200vh;
+    background-image: url("../../assets/images/6.jpg");
+    opacity: 0.95;
+    box-sizing: border-box;
+    background-size: cover;
+    backface-visibility: hidden;
+    background-position: 50% 40%;
+    z-index: 20;
+    .title {
+        position: absolute;
+        display: inline-block;
+        font-size: 15vmin;
+        left: 50%;
+        top: 20%;
+        color: rgb(249, 166, 2);
+        font-weight: 1000;
+        transform: translate(-50%);
+
+        font-family: "Amatic SC", cursive;
+        font-weight: bold;
+        animation-duration: 2.5s;
+        animation-name: fromRighttWithRotateText;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes fromRighttWithRotateText {
+    0% {
+        transform: translate(5vw, -15vh);
+    }
+
+    30% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: translate(-400px, -5vh);
+    }
+    50% {
+        transform: rotate(-1.5deg);
+    }
+
+    55% {
+        transform: translate(-200px, 0);
+    }
+}

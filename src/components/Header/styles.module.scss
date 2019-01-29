@@ -1,28 +1,36 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
-
 .Header {
     width: 99vw;
     top: 4vh;
     height: 13vh;
     position: absolute;
     box-sizing: border-box;
+    z-index: 1;
 
     display: grid;
     grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(100px, 200px));
     grid-column-gap: 2vw;
     align-items: center;
 
-    img {
-        height: 15vmin;
+    .img {
+        height: 100px;
         background-size: cover;
         justify-self: self-start;
         padding-left: 10vw;
+
+        &:hover {
+            transform: rotate(-3deg) scale(1.2);
+            transition: 200ms;
+            animation-timing-function: ease-in-out;
+        }
     }
     .button {
         text-align: center;
         font-size: 3.5vmin;
-        font-weight: 900;
-        font-family: "Amatic SC", cursive;
+        font-weight: 1000;
+
+        font-family: "Sue Ellen Francisco", cursive;
+
+        text-decoration: none;
         color: black;
 
         padding-bottom: 1rem;
@@ -30,12 +38,12 @@
             border-bottom: 2px solid orange;
         }
         &:active {
-            border-bottom: 3px solid whitesmoke;
+            transform: translate(0, 6px);
+            transition-duration: 100ms;
+            border-bottom: 3px solid orange;
         }
-        .link {
-            text-decoration: none;
-
-            color: black;
-        }
+    }
+    .active {
+        border-bottom: 3px solid orange;
     }
 }
