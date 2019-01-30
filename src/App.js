@@ -11,7 +11,9 @@ class App extends Component {
                     <Header />
 
                     <Switch>
-                        <Route path="/" component={Dashboard} />
+                        <Route path="/" exact component={Dashboard} />
+                        <Route path="/api/current_user" component={Dashboard} />
+                        <Route path="/api" component={Dashboard} />
                     </Switch>
                 </>
             </BrowserRouter>
