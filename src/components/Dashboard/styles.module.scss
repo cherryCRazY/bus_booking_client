@@ -8,7 +8,7 @@
     background-size: cover;
     backface-visibility: hidden;
     background-position: 50% 40%;
-    z-index: 20;
+    z-index: -1;
     .title {
         position: absolute;
         display: inline-block;

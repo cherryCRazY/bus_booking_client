@@ -8,7 +8,6 @@
 
     display: grid;
     grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(100px, 200px));
-    grid-column-gap: 2vw;
     align-items: center;
 
     .img {
@@ -16,17 +15,21 @@
         background-size: cover;
         justify-self: self-start;
         padding-left: 10vw;
+        transform: rotate(0);
+        transition: 500ms;
+        animation-timing-function: ease-in-out;
 
         &:hover {
-            transform: rotate(-3deg) scale(1.2);
+            transform: rotate(-5deg) scale(1.2);
             transition: 200ms;
             animation-timing-function: ease-in-out;
         }
     }
     .button {
         text-align: center;
-        font-size: 3.5vmin;
+        font-size: 4.5vmin;
         font-weight: 1000;
+        box-sizing: border-box;
 
         font-family: "Sue Ellen Francisco", cursive;
 

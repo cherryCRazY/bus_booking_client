@@ -6,13 +6,15 @@
 
     .find {
         position: relative;
-        border-radius: 2px;
-        background-color: rgba(28, 180, 130, 0.85);
+        border-radius: 150px;
+        background-color: rgba(2, 192, 130, 0.75);
         width: 80vw;
         height: 25vh;
+        text-align: center;
         animation-duration: 1.2s;
         animation-name: fromRighttWithRotate;
         animation-timing-function: ease-in-out;
+
         .selectContainer {
             position: relative;
             display: flex;
@@ -28,14 +30,22 @@
                 position: inherit;
                 display: flex;
                 border-radius: 2vmin;
-                background-color: rgba(249, 166, 2, 0.95);
-                align-items: center;
+                background-color: rgb(255, 158, 31);
                 justify-content: center;
+                align-items: center;
                 height: 10vh;
                 width: 25vw;
+                .title {
+                    position: relative;
+                    left: 25%;
+                    font-size: 2vmin;
+                    transform: translate(-50%);
+                    top: -10%;
+                }
                 .Select {
                     width: 20vw;
                     outline: none;
+                    display: inline-block;
                     border: none;
                     &:focus {
                         box-shadow: 2px 2px 2px 3px gray;
@@ -120,19 +130,24 @@
 }
 @keyframes fromRighttWithRotateButton {
     0% {
-        transform: translate(5vw, -15vh);
+        transform: translate(5vw, -20vh);
     }
 
     30% {
         transform: rotate(-5deg);
     }
     50% {
-        transform: translate(-2vw, 5vh);
+        transform: translate(-2vw, -2vh);
     }
     50% {
-        transform: rotate(-1.5deg);
+        transform: rotate(-4deg);
+    }
+    60% {
+        transform: translate(0, -2vh);
     }
     75% {
         transform: rotate(0);
+    }
+    80% {
     }
 }

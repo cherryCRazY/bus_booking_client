@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Select from "react-select";
 import Date from "../UI/Date/Date";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
 import EventIcon from "@material-ui/icons/Event";
 import Styles from "./styles.module.scss";
 
@@ -38,7 +39,6 @@ class Search extends Component {
                 <div className={Styles.find}>
                     <div className={Styles.selectContainer}>
                         <div className={Styles.box}>
-                            <div />
                             <Select
                                 className={Styles.Select}
                                 value={fromTown}
@@ -46,7 +46,7 @@ class Search extends Component {
                                 options={options}
                                 placeholder=" FROM  "
                             />
-                            <LocationOnIcon />
+                            <MyLocationIcon />
                         </div>
                         <div className={Styles.box}>
                             <Select
