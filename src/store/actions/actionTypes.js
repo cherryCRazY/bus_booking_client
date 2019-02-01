@@ -1,2 +1,4 @@
-export const FETCH_USER = "fetch_user";
-export const FETCH_USER_ASYNC = "fetch_user_async";
+export const FETCH_USER = "FETCH_USER";
+export const FETCH_USER_ASYNC = "FETCH_USER_ASYNC";
+export const FIND_ROUTE_ASYNC = "FIND_ROUTE_ASYNC";
+export const FIND_ROUTE = "FIND_ROUTE ";
