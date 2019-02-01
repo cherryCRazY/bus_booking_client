@@ -5,6 +5,10 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import MyLocationIcon from "@material-ui/icons/MyLocation";
 import EventIcon from "@material-ui/icons/Event";
 import Styles from "./styles.module.scss";
+import Spinner from "../UI/Spinner/Spinner";
+
+import appAction from "../../store/actions/appAction";
+import { connect } from "react-redux";
 
 const options = [
     { value: "Berezne", label: "Berezne" },
@@ -15,26 +19,39 @@ const options = [
 
 class Search extends Component {
     state = {
-        fromTown: null,
-        toTown: null,
+        fromCity: null,
+        toCity: null,
         date: null
     };
-    handleChangeFromTowm = fromTown => {
-        this.setState({ fromTown });
-        console.log(`Option selected:`, fromTown);
+    handleChangeFromTowm = fromCity => {
+        this.setState({ fromCity });
+        console.log(`Option selected:`, fromCity);
     };
-    handleChangeToTown = toTown => {
-        this.setState({ toTown });
-        console.log(`Option selected:`, toTown);
+    handleChangeToTown = toCity => {
+        this.setState({ toCity });
+        console.log(`Option selected:`, toCity);
     };
     handleChangeDate = date => {
         this.setState({ date });
         console.log(`Option selected:`, date);
     };
+    handleSeach = () => {
+        const { onFindRoute } = this.props;
+        const { fromCity, toCity, date } = this.state;
+        const payload = {
+            fromCity: fromCity.value,
+            toCity: toCity.value,
+            date
+        };
+        onFindRoute(payload);
+    };
+
     render() {
         const { fromTown, toTown } = this.state;
 
-        return (
+        return true ? (
+            <Spinner />
+        ) : (
             <div className={Styles.container}>
                 <div className={Styles.find}>
                     <div className={Styles.selectContainer}>
@@ -64,10 +81,19 @@ class Search extends Component {
                         </div>
                     </div>
                 </div>
-                <button className={Styles.button}>Search</button>
+                <button className={Styles.button} onClick={this.handleSeach}>
+                    Search
+                </button>
             </div>
         );
     }
 }
 
-export default Search;
+const mapDispatchToProps = dispatch => ({
+    onFindRoute: data => dispatch(appAction.findRouteAsync(data))
+});
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Search);

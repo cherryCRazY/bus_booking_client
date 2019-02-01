@@ -8,22 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 import { createStore, compose, applyMiddleware } from "redux";
 import reducers from "./store/reducers";
-import { put, call, all, apply, take, takeEvery } from "redux-saga/effects";
-import { FETCH_USER, FETCH_USER_ASYNC } from "./store/actions/actionTypes";
-import axios from "axios";
-
-// const kek = axios.get("/api/current_user").then(data => console.log(data));
-
-function* fetchUser() {
-    const payload = yield apply(axios, axios.get, ["/api/current_user"]);
-
-    console.log(payload.data);
-    yield put({ type: FETCH_USER, payload: payload.data });
-}
-
-function* watchLogger() {
-    yield takeEvery(FETCH_USER_ASYNC, fetchUser);
-}
+import rootSaga from "./store/sagas/rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers =
@@ -36,9 +21,9 @@ const store = createStore(
     {},
     composeEnhancers(applyMiddleware(sagaMiddleware))
 );
-sagaMiddleware.run(watchLogger);
 
-const action = type => (console.log("kek"), store.dispatch({ type }));
+
+sagaMiddleware.run(rootSaga);
 
 const app = (
     <Provider store={store}>
