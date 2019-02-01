@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import Header from "./components/Header/Header";
-import Dashboard from "./components/Dashboard/Dashboard";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
+import Header from "./components/Header/Header";
+import Dashboard from "./components/Dashboard/Dashboard";
+
+import userAction from "./store/actions/userAction";
+
 class App extends Component {
     componentDidMount() {
-        console.log("keko");
         this.props.fetchUser();
     }
     render() {
@@ -27,7 +29,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: () => dispatch({ type: "fetch_user_async" })
+    fetchUser: () => dispatch(userAction.fetchUserAsync())
 });
 
 export default connect(
