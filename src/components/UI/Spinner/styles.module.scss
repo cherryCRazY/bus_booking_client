@@ -1,0 +1,99 @@
+.loaderInner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 70, 36, 0.327);
+    animation: appear 300ms;
+    z-index: 100;
+}
+
+.loaderLineWrap {
+    animation: spin 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    box-sizing: border-box;
+    height: 50px;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 50px);
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loaderLine {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loaderLineWrap:nth-child(1) {
+    animation-delay: -50ms;
+}
+.loaderLineWrap:nth-child(2) {
+    animation-delay: -100ms;
+}
+.loaderLineWrap:nth-child(3) {
+    animation-delay: -150ms;
+}
+.loaderLineWrap:nth-child(4) {
+    animation-delay: -200ms;
+}
+.loaderLineWrap:nth-child(5) {
+    animation-delay: -250ms;
+}
+
+.loaderLineWrap:nth-child(1) .loaderLine {
+    border-color: #eee;
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loaderLineWrap:nth-child(2) .loaderLine {
+    border-color: #00ee7a;
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loaderLineWrap:nth-child(3) .loaderLine {
+    border-color: rgb(52, 113, 57);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loaderLineWrap:nth-child(4) .loaderLine {
+    border-color: #4e4e4e;
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loaderLineWrap:nth-child(5) .loaderLine {
+    border-color: #1e1f21;
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%,
+    15% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
