@@ -1,0 +1,36 @@
+.gridContainer {
+    background-color: #f4f7fa;
+    background-color: #f4f7fa;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60vw;
+    padding: 2vh;
+
+    .griMain {
+        width: 42vw;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 4vh;
+        color: darksalmon;
+        border: 1px solid rgba(184, 189, 211, 0.8);
+
+        background-color: #f4f7fa;
+        border-radius: 10px;
+
+        .row {
+            display: grid;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            grid-template-rows: repeat(4, 3vw);
+            grid-template-columns: repeat(10, 3vw);
+            grid-gap: 1vmax;
+            grid-auto-flow: column;
+        }
+    }
+}

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
-import Header from "./components/Header/Header";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Profile from "./components/Profile/Profile";
 
 import userAction from "./store/actions/userAction";
 
@@ -14,15 +14,11 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <>
-                    <Header />
-
-                    <Switch>
-                        <Route path="/" exact component={Dashboard} />
-                        <Route path="/api/current_user" component={Dashboard} />
-                        <Route path="/user" component={Dashboard} />
-                    </Switch>
-                </>
+                <Switch>
+                    <Route path="/" exact component={Dashboard} />
+                    <Route path="/api/current_user" component={Dashboard} />
+                    <Route path="/profile" component={Profile} />
+                </Switch>
             </BrowserRouter>
         );
     }

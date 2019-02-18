@@ -1,0 +1,38 @@
+.tickets_active {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Bad Script", cursive;
+    position: relative;
+
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    align-items: center;
+
+    list-style: none;
+    color: rgb(10, 10, 12);
+    text-align: end;
+    font-size: 1.75vmin;
+    font-weight: 1000;
+    padding: 2vw;
+    margin: 2vh 0;
+    border-radius: 1.5px;
+    border-bottom: 1px solid #f4f7fa;
+    .tickets_price {
+        margin-right: 1vw;
+    }
+}
+.tickets_passive {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background: #f4f7fa;
+    height: 25%;
+    font-size: 30px;
+    border-bottom: 1px solid rgb(0, 21, 41);
+}

@@ -1,20 +1,31 @@
 .bus {
-    width: 100vw;
-    min-height: 100vh;
-    max-height: 200vh;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    position: relative;
+
+    min-width: 98vw;
     background-image: url("../../assets/images/6.jpg");
-    opacity: 0.95;
     box-sizing: border-box;
     background-size: cover;
     backface-visibility: hidden;
     background-position: 50% 40%;
-    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
     .title {
         position: absolute;
         display: inline-block;
         font-size: 15vmin;
+        text-align-last: center;
         left: 50%;
-        top: 20%;
+        top: 14%;
         color: rgb(249, 166, 2);
         font-weight: 1000;
         transform: translate(-50%);

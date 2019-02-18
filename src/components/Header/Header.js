@@ -9,31 +9,41 @@ import { connect } from "react-redux";
 class Header extends Component {
     handleHeaderContent() {
         const data = this.props.data;
-        console.log(data);
 
         switch (data) {
             case undefined: {
-                console.log("1");
                 return;
             }
             case false: {
                 return [
-                    <NavLink to="/help" key="1" className={Styles.button}>
+                    <a
+                        href="https://www.google.com/"
+                        key="1"
+                        className={Styles.headerItem}
+                    >
                         Help
-                    </NavLink>,
-                    <a className={Styles.button} key="2" href="/auth/google">
+                    </a>,
+                    <a
+                        className={Styles.headerItem}
+                        key="2"
+                        href="/auth/google"
+                    >
                         Login with Google
                     </a>
                 ];
             }
             default: {
                 return [
-                    <NavLink to="/user" key="1" className={Styles.button}>
+                    <NavLink
+                        to="/profile"
+                        key="1"
+                        className={Styles.headerItem}
+                    >
                         <AccountBoxIcon />
                         Profile
                     </NavLink>,
                     <a
-                        className={Styles.button}
+                        className={Styles.headerItem}
                         key="2"
                         href="/auth/google/logout"
                     >
@@ -47,14 +57,12 @@ class Header extends Component {
         return (
             <>
                 <nav className={Styles.Header}>
-                    <NavLink to="/">
-                        <img src={logo} alt="logo" className={Styles.img} />
-                    </NavLink>
-                    <NavLink to="/" className={Styles.button}>
-                        Home
-                    </NavLink>
-
-                    {this.handleHeaderContent()}
+                    <div>
+                        <NavLink to="/">
+                            <img src={logo} alt="logo" className={Styles.img} />
+                        </NavLink>
+                    </div>
+                    <div>{this.handleHeaderContent()}</div>
                 </nav>
             </>
         );

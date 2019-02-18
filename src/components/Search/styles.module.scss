@@ -15,6 +15,14 @@
         animation-name: fromRighttWithRotate;
         animation-timing-function: ease-in-out;
 
+        .Error {
+            padding-top: 6vh;
+            color: rgba(255, 0, 0, 0.719);
+            font-weight: 1000;
+            font-family: "Bad Script", cursive;
+            font-size: 2vmin;
+            display: block;
+        }
         .selectContainer {
             position: relative;
             display: flex;
@@ -86,6 +94,9 @@
         animation-duration: 1.2s;
         color: whitesmoke;
         outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 3.5vmin;
         font-family: "Bad Script", cursive;
         font-weight: bold;

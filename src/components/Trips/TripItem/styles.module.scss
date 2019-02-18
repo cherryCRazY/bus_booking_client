@@ -1,0 +1,30 @@
+.TripItem {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    grid-gap: 2vh;
+    align-items: flex-start;
+    align-content: center;
+
+    position: relative;
+    width: 60vw;
+    height: 25vh;
+    left: 50%;
+    transform: translate(-50%);
+
+    border-radius: 15px;
+    background-color: seagreen;
+    color: #39393a;
+    font-family: "Bad Script", cursive;
+    font-size: 1rem;
+    border: 1px solid rgba(184, 189, 211, 0.8);
+    background-color: #f4f7fa;
+    .time {
+        color: #5c5d66;
+        font-size: 4vmin;
+        .date {
+            font-size: 2.5vmin;
+            color: #9096b9;
+        }
+    }
+}

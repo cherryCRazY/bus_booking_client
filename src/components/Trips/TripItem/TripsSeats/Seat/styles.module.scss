@@ -1,0 +1,48 @@
+.seat {
+    outline: none;
+    text-align: justify;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    font-size: 2vw;
+    border-radius: 0 25% 25% 0;
+    color: black;
+    font-family: "Raleway", sans-serif;
+
+    &::before {
+        content: "";
+        position: relative;
+        left: -15%;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        border: 1.5px solid silver;
+    }
+}
+.free {
+    &:hover:before {
+        border-color: #0285ff75;
+    }
+    &:hover {
+        background-color: #0285ff75;
+    }
+}
+.active {
+    background-color: #0080ff;
+
+    &::before {
+        content: "";
+        border-color: #0080ff;
+    }
+    &:hover:before {
+        border-color: #0080ff;
+    }
+    :hover {
+        border-color: #0080ff;
+    }
+}
+.disable {
+    background-color: gray;
+    pointer-events: none;
+    &::before {
+        border-color: gray;
+    }
+}

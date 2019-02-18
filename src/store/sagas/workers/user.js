@@ -1,4 +1,4 @@
-import { put, call, apply } from "redux-saga/effects";
+import { put, apply } from "redux-saga/effects";
 import userAction from "../../actions/userAction";
 import axios from "axios";
 

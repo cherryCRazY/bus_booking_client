@@ -4,6 +4,7 @@ import "./index.scss";
 import App from "./App";
 // import * as serviceWorker from "./serviceWorker";
 import createSagaMiddleware from "redux-saga";
+import "antd/dist/antd.css";
 
 import { Provider } from "react-redux";
 import { createStore, compose, applyMiddleware } from "redux";
@@ -21,7 +22,6 @@ const store = createStore(
     {},
     composeEnhancers(applyMiddleware(sagaMiddleware))
 );
-
 
 sagaMiddleware.run(rootSaga);
 

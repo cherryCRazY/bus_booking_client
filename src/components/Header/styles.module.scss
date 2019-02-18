@@ -1,13 +1,13 @@
 .Header {
-    width: 99vw;
+    width: 96vw;
     top: 4vh;
     height: 13vh;
     position: absolute;
     box-sizing: border-box;
     z-index: 1;
 
-    display: grid;
-    grid-template-columns: minmax(150px, 1fr) repeat(3, minmax(100px, 200px));
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 
     .img {
@@ -25,18 +25,19 @@
             animation-timing-function: ease-in-out;
         }
     }
-    .button {
+    .headerItem {
         text-align: center;
-        font-size: 4.5vmin;
-        font-weight: 1000;
+        font-size: 3.5vmin;
+        font-weight: 400;
         box-sizing: border-box;
 
-        font-family: "Sue Ellen Francisco", cursive;
+        font-family: "Amatic", cursive;
 
         text-decoration: none;
         color: black;
 
         padding-bottom: 1rem;
+        margin: 2vmin;
         &:hover {
             border-bottom: 2px solid orange;
         }

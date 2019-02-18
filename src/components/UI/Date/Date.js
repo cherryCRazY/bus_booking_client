@@ -1,23 +1,20 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import classes from "./Date.module.scss";
+import { DatePicker } from "antd";
+import moment from "moment";
 
 function DatePickers(props) {
     const { handlerChange } = props;
+    const dateFormat = "YYYY/MM/DD";
     return (
-        <form className={classes.container}>
-            <TextField
-                id="date"
-                label="Choose the date"
-                type="date"
-                name="date"
-                onChange={e => handlerChange(e.target.value)}
-                className={classes.textField}
-                InputLabelProps={{
-                    shrink: true
-                }}
+        <div>
+            <DatePicker
+                disabledDate={e => moment(new Date()).add(-1, "days") > e}
+                showTime
+                style={{ width: "10vw" }}
+                format={dateFormat}
+                onChange={e => (e ? handlerChange(e.toDate()) : console.log(e))}
             />
-        </form>
+        </div>
     );
 }
 
